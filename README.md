@@ -4,6 +4,10 @@ A proof-of-concept operational AI agent built with Snowflake Cortex Agents that 
 
 > **POC scope:** the retry action records a governed retry request in Snowflake. It does not invoke a real production orchestrator such as Airflow, dbt Cloud, or Azure Data Factory.
 
+## Demo
+
+[![Watch the SnowOps AI demo](https://img.youtube.com/vi/DbqBogoorIw/maxresdefault.jpg)](https://youtu.be/DbqBogoorIw)
+
 ## What this project demonstrates
 
 - Snowflake operational data modeling
