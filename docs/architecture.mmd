@@ -1,0 +1,27 @@
+flowchart TD
+    U[User] --> A[SnowOps Cortex Agent]
+
+    A --> OA[Operations Analyst]
+    A --> RS[Runbook Search]
+    A --> RT[Request Pipeline Retry]
+
+    OA --> SV[Snowflake Semantic View]
+    SV --> P[PIPELINES]
+    SV --> PR[PIPELINE_RUNS]
+    SV --> SC[SCHEMA_CHANGES]
+
+    RS --> CS[Cortex Search Service]
+    CS --> RB[OPERATION_RUNBOOKS]
+
+    RT --> SP[REQUEST_PIPELINE_RETRY Procedure]
+    SP --> PA[PIPELINE_ACTIONS]
+
+    P --> RCA[Root-cause diagnosis]
+    PR --> RCA
+    SC --> RCA
+    RB --> RCA
+
+    RCA --> REC[Recommended remediation]
+    REC --> APPROVAL{User explicitly approves?}
+    APPROVAL -- No --> STOP[Explain and wait]
+    APPROVAL -- Yes --> RT
